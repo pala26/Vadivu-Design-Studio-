@@ -51,7 +51,7 @@ npm start
 - Palette: warm paper background, near-black ink, terracotta clay accent, moss and gold secondary accents.
 - Typography: Fraunces (display serif) for headings, Inter for body copy, JetBrains Mono for labels/eyebrows.
 - Signature element: an oversized outlined "DIVU VADI" wordmark bleeding behind the hero headline.
-- Images are generated gradient SVG placeholders (no stock photography used) and are served through `next/image` for optimization.
+- Images are served through `next/image` for optimization.
 
 ## Assumptions / additional features
 
