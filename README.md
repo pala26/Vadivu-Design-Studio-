@@ -1,4 +1,4 @@
-# Forma Studio — Design Agency Homepage
+# Vadivu Design Studio — Design Agency Homepage
 
 A Next.js 13+ (App Router) homepage built for the Next.js Developer Internship task.
 
@@ -25,7 +25,7 @@ components/
   Footer.js
 public/
   hero-graphic.svg
-  portfolio/*.svg     # Project artwork placeholders
+  portfolio/*.jpg     # Project artwork placeholders
 ```
 
 Each homepage section (Hero, Services, Portfolio, Contact) is its own component for clarity and reuse, as requested in the task.
@@ -50,7 +50,7 @@ npm start
 
 - Palette: warm paper background, near-black ink, terracotta clay accent, moss and gold secondary accents.
 - Typography: Fraunces (display serif) for headings, Inter for body copy, JetBrains Mono for labels/eyebrows.
-- Signature element: an oversized outlined "FORMA" wordmark bleeding behind the hero headline.
+- Signature element: an oversized outlined "DIVU VADI" wordmark bleeding behind the hero headline.
 - Images are generated gradient SVG placeholders (no stock photography used) and are served through `next/image` for optimization.
 
 ## Assumptions / additional features
