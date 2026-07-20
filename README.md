@@ -112,3 +112,45 @@ docker compose down
 *Container running (`docker ps` output):*
 
 ![Task 1 - docker ps output](screenshots/task1-ps.png)
+
+## Task 2: CI/CD Pipeline with GitHub Actions
+
+**Goal:** Build an automated pipeline that builds, tests, and deploys the containerized app.
+
+**What was done:**
+- Created a GitHub Actions workflow at `.github/workflows/ci.yml` with two jobs:
+  - `build-and-test` — checks out the code, sets up Node.js 20, installs dependencies with `npm ci`, and runs `npm run build`
+  - `docker-build-push` — logs into Docker Hub, builds the Docker image using the Task 1 Dockerfile, and pushes it to Docker Hub
+- The pipeline runs automatically on every push to `main`/`master` and on pull requests
+- Docker Hub credentials are stored securely as GitHub repository secrets (`DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`) rather than hardcoded
+- First run failed due to a `next lint` CLI bug misinterpreting arguments in the CI environment; the lint step was removed and the pipeline succeeded on the next push
+
+**Result:**
+- Pipeline runs successfully, image pushed to: [hub.docker.com/r/pala29/vadivu-design-studio](https://hub.docker.com/r/pala29/vadivu-design-studio)
+
+**Files added:**
+- `.github/workflows/ci.yml`
+
+**Screenshots:**
+
+*All workflow runs (initial failed run, then successful run after fix):*
+
+![Task 2 - Workflow runs list](screenshots/task2-workflow-runs.png)
+
+*Pipeline overview — both jobs succeeded:*
+
+![Task 2 - Pipeline overview](screenshots/task2-overview.png)
+
+*build-and-test job — steps breakdown:*
+
+![Task 2 - Build and test steps](screenshots/task2-build-steps.png)
+
+*docker-build-push job — steps breakdown:*
+
+![Task 2 - Docker build and push steps](screenshots/task2-push-steps.png)
+
+*Docker image pushed to Docker Hub:*
+
+![Task 2 - Docker Hub repository](screenshots/task2-dockerhub.png)
+
+---
