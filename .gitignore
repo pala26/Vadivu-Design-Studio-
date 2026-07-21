@@ -3,3 +3,9 @@ node_modules
 out
 .DS_Store
 *.log
+
+task3-terraform/.terraform/
+task3-terraform/.terraform.lock.hcl
+task3-terraform/*.tfstate
+task3-terraform/*.tfstate.backup
+task3-terraform/*.tfvars

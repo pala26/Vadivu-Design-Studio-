@@ -154,3 +154,47 @@ docker compose down
 ![Task 2 - Docker Hub repository](screenshots/task2-dockerhub.png)
 
 ---
+
+## Task 3: Infrastructure as Code (IaC) — Terraform + LocalStack
+
+**Goal:** Use Terraform to provision an S3 bucket, using LocalStack (a free local AWS emulator) instead of real AWS.
+
+**Files added:**
+- `task3-terraform/provider.tf`
+- `task3-terraform/variables.tf`
+- `task3-terraform/main.tf`
+- `task3-terraform/outputs.tf`
+- `task3-terraform/README.md`
+
+**What was done:**
+- Wrote Terraform config targeting LocalStack's endpoints instead of real AWS
+- Ran LocalStack locally via Docker, exposing AWS services on `localhost:4566`
+- Used variables for region, bucket name, and environment tag (with defaults)
+- Verified the bucket was created via `terraform apply` output and its outputs
+
+**Commands used:**
+localstack start -d
+terraform init
+terraform plan
+terraform apply
+
+**Screenshots:**
+
+*LocalStack running (S3 and other AWS services available):*
+
+![Task 3 - LocalStack running](task3-terraform/screenshots/01-localstack-running.png)
+
+*Terraform init:*
+
+![Task 3 - Terraform init](task3-terraform/screenshots/02-terraform-init.png)
+
+*Terraform plan output:*
+
+![Task 3 - Terraform plan part 1](task3-terraform/screenshots/03-terraform-plan-1.png)
+![Task 3 - Terraform plan part 2](task3-terraform/screenshots/03-terraform-plan-2.png)
+
+*Terraform apply — bucket created and verified via outputs:*
+
+![Task 3 - Terraform apply](task3-terraform/screenshots/04-terraform-apply.png)
+
+
